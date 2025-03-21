@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <AppNavbar />
+  <AppHero />
+  <FeaturedCourses />
+  <RecommendedCourses />
+  <AppGetInTouch/>
+  <AppFooter />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppNavbar from './components/AppNavbar.vue';
+import AppHero from './components/AppHero.vue';
+import FeaturedCourses from './components/FeaturedCourses.vue';
+import RecommendedCourses from './components/RecommendedCourses.vue';
+import AppFooter from './components/AppFooter.vue';
+import AppGetInTouch from './components/AppGetInTouch.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    AppNavbar,
+    AppHero,
+    FeaturedCourses,
+    RecommendedCourses,
+    AppGetInTouch,
+    AppFooter
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
