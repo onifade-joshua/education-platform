@@ -1,31 +1,35 @@
 <template>
   <footer class="bg-white py-4">
     <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
+      <!-- Top Section -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
         <!-- Logo -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-center mb-3 mb-md-0">
           <span class="logo-dot bg-dark me-1"></span>
           <span class="logo-dot bg-primary me-1"></span>
           <span class="logo-dot bg-secondary"></span>
         </div>
         
         <!-- Navigation Links -->
-        <ul class="nav">
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Pricing</a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Integration</a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Blogs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">About</a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Contact</a></li>
+        <ul class="nav flex-column flex-md-row">
+          <li class="nav-item"><a href="#" class="nav-link text-dark px-2">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark px-2">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark px-2">Integration</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark px-2">Blogs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark px-2">About</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark px-2">Contact</a></li>
         </ul>
       </div>
-      
+
       <!-- Divider -->
       <hr class="my-3 border-dark" />
-      
-      <div class="d-flex justify-content-between align-items-center">
+
+      <!-- Bottom Section -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
         <p class="m-0 text-dark">All rights reserved | Terms and conditions apply!</p>
-        <div class="d-flex gap-3">
+        
+        <!-- Social Media Icons -->
+        <div class="d-flex gap-3 mt-3 mt-md-0">
           <a href="#" class="text-dark fs-5"><i class="bi bi-facebook"></i></a>
           <a href="#" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
           <a href="#" class="text-dark fs-5"><i class="bi bi-youtube"></i></a>

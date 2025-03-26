@@ -171,4 +171,84 @@ export default {
   display: inline-block;
   box-shadow: 0 2px 8px rgba(108, 56, 255, 0.4);
 }
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .courses-card, .about-section {
+    width: 100%;
+  }
+
+  .about-heading {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 15px;
+  }
+
+  .courses-card {
+    padding: 30px;
+  }
+
+  .course-title {
+    font-size: 22px;
+  }
+
+  .course-list li {
+    font-size: 16px;
+  }
+
+  .about-heading {
+    font-size: 26px;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 40px 10px;
+  }
+
+  .content {
+    gap: 20px;
+  }
+
+  .courses-card {
+    padding: 25px;
+    border-radius: 20px;
+  }
+
+  .course-title {
+    font-size: 20px;
+  }
+
+  .course-list li {
+    font-size: 14px;
+  }
+
+  .about-heading {
+    font-size: 22px;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
 </style>

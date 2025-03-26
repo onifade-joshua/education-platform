@@ -1,8 +1,8 @@
 <template>
   <div class="container py-5">
     <div class="row align-items-center">
-      <!-- Left Section -->
-      <div class="col-md-6 mb-4 mb-md-0">
+      <!-- Left Section (Text) -->
+      <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
         <p class="text-uppercase text-secondary fw-semibold">GET IN TOUCH</p>
         <h1 class="fw-bold display-5">
           Let's <span class="text-primary">Make</span> Your Brand <span class="text-dark">Brilliant!</span>
@@ -13,27 +13,27 @@
       </div>
 
       <!-- Right Section (Form) -->
-      <div class="col-md-6 bg-light p-4 rounded shadow">
+      <div class="col-12 col-md-6 bg-light p-4 rounded shadow">
         <div class="row g-3">
-          <div class="col-md-6">
+          <div class="col-12 col-md-6">
             <div class="input-group">
               <span class="input-group-text">👤</span>
-              <input type="text" class="form-control" placeholder="Eleanor Pena" />
+              <input type="text" class="form-control" placeholder="First name" />
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-12 col-md-6">
             <div class="input-group">
               <span class="input-group-text">👤</span>
               <input type="text" class="form-control" placeholder="Last name" />
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-12 col-md-6">
             <div class="input-group">
               <span class="input-group-text">📧</span>
               <input type="email" class="form-control" placeholder="Email Address" />
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-12 col-md-6">
             <div class="input-group">
               <span class="input-group-text">📞</span>
               <input type="tel" class="form-control" placeholder="Phone number" />
@@ -43,6 +43,9 @@
             <div class="input-group">
               <textarea class="form-control" placeholder="Write a message" rows="4"></textarea>
             </div>
+          </div>
+          <div class="col-12 text-center">
+            <button class="btn btn-primary w-100 w-md-auto px-4">Submit</button>
           </div>
         </div>
       </div>
@@ -59,5 +62,13 @@ export default {
 <style scoped>
 .container {
   max-width: 1200px;
+}
+@media (max-width: 768px) {
+  .input-group-text {
+    font-size: 14px;
+  }
+  .form-control {
+    font-size: 14px;
+  }
 }
 </style>

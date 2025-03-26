@@ -2,7 +2,7 @@
   <section class="featured-courses">
     <div class="container text-center">
       <h2 class="title">Featured our creative courses</h2>
-      
+
       <div class="courses-grid">
         <div class="course-card" v-for="course in courses" :key="course.title">
           <div class="icon">
@@ -56,22 +56,24 @@ export default {
 }
 
 .title {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
   color: #1d1b44;
   margin-bottom: 40px;
 }
 
+/* Responsive Course Grid */
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   justify-content: center;
 }
 
+/* Course Card */
 .course-card {
   background: linear-gradient(135deg, #f0f5ff, #ebf0ff);
-  padding: 25px;
+  padding: 20px;
   border-radius: 16px;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -87,7 +89,7 @@ export default {
 }
 
 .course-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: #1d1b44;
   margin-top: 10px;
@@ -114,5 +116,33 @@ export default {
 
 .view-all-btn:hover {
   background: #141136;
+}
+
+/* Mobile Responsive Styling */
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card {
+    padding: 15px;
+  }
+
+  .course-title {
+    font-size: 16px;
+  }
+
+  .course-description {
+    font-size: 13px;
+  }
+
+  .view-all-btn {
+    font-size: 14px;
+    padding: 12px 25px;
+  }
 }
 </style>
