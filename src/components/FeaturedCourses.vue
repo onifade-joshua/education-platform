@@ -6,7 +6,7 @@
       <div class="courses-grid">
         <div class="course-card" v-for="course in courses" :key="course.title">
           <div class="icon">
-            <img :src="course.icon" alt="Course Icon" />
+            <img :src="logo" alt="Course Icon" class="logo"/>
           </div>
           <h4 class="course-title">{{ course.title }}</h4>
           <p class="course-description">{{ course.description }}</p>
@@ -19,28 +19,31 @@
 </template>
 
 <script>
+import Logo from "../assets/logo-img.png";
+
 export default {
   data() {
     return {
+      logo: Logo,
       courses: [
         {
           title: "UI / UX Design",
-          description: "There are many variations of passages of available but the majority have suffered...",
+          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa dicta consectetur deserunt alias similique, temporibus quaerat blanditiis libero dolores omnis deleniti repudiandae ipsa quas vero labore minus quia quidem soluta reiciendis! Accusantium natus unde accusamus nostrum autem. Architecto est rem atque, id quia accusamus magni laudantium nulla dolore, voluptates repudiandae....",
           icon: "uiux-icon.png",
         },
         {
           title: "Web Development",
-          description: "There are many variations of passages of available but the majority have suffered...",
+          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa dicta consectetur deserunt alias similique, temporibus quaerat blanditiis libero dolores omnis deleniti repudiandae ipsa quas vero labore minus quia quidem soluta reiciendis! Accusantium natus unde accusamus nostrum autem. Architecto est rem atque, id quia accusamus magni laudantium nulla dolore, voluptates repudiandae....",
           icon: "webdev-icon.png",
         },
         {
           title: "SEO/ Marketing",
-          description: "There are many variations of passages of available but the majority have suffered...",
+          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa dicta consectetur deserunt alias similique, temporibus quaerat blanditiis libero dolores omnis deleniti repudiandae ipsa quas vero labore minus quia quidem soluta reiciendis! Accusantium natus unde accusamus nostrum autem. Architecto est rem atque, id quia accusamus magni laudantium nulla dolore, voluptates repudiandae....",
           icon: "seo-icon.png",
         },
         {
           title: "Branding",
-          description: "There are many variations of passages of available but the majority have suffered...",
+          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa dicta consectetur deserunt alias similique, temporibus quaerat blanditiis libero dolores omnis deleniti repudiandae ipsa quas vero labore minus quia quidem soluta reiciendis! Accusantium natus unde accusamus nostrum autem. Architecto est rem atque, id quia accusamus magni laudantium nulla dolore, voluptates repudiandae....",
           icon: "branding-icon.png",
         }
       ],
@@ -53,6 +56,7 @@ export default {
 .featured-courses {
   padding: 60px 20px;
   background: #f8f9ff;
+  margin-bottom: rem;
 }
 
 .title {
@@ -65,8 +69,8 @@ export default {
 /* Responsive Course Grid */
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
   justify-content: center;
 }
 
@@ -87,7 +91,10 @@ export default {
 .icon img {
   width: 50px;
 }
-
+.logo {
+  width: 80px;
+  height: 50px;
+}
 .course-title {
   font-size: 18px;
   font-weight: bold;
@@ -102,8 +109,8 @@ export default {
 
 /* View All Courses Button */
 .view-all-btn {
-  margin-top: 30px;
-  padding: 15px 30px;
+  margin-top: 80px;
+  padding: 20px 30px;
   background: #1d1b44;
   color: white;
   font-size: 16px;

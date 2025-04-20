@@ -8,6 +8,10 @@
       <AppHero />
       <FeaturedCourses />
       <RecommendedCourses />
+      <CustomerReview />
+      <WhyUsSection />
+      <WhyDifferentSection />
+      <FeaturedNews />
       <AppGetInTouch />
       <AppFooter />
     </template>
@@ -24,13 +28,21 @@ import FeaturedCourses from "./components/FeaturedCourses.vue";
 import RecommendedCourses from "./components/RecommendedCourses.vue";
 import AppFooter from "./components/AppFooter.vue";
 import AppGetInTouch from "./components/AppGetInTouch.vue";
-
+import "./App.css";
+import CustomerReview from "./components/CustomerReview.vue";
+import WhyUsSection from "./components/WhyUsSection.vue";
+import WhyDifferentSection from "./components/WhyDifferentSection.vue";
+import FeaturedNews from "./components/FeaturedNews.vue";
 export default {
   components: {
     AppNavbar,
     AppHero,
     FeaturedCourses,
     RecommendedCourses,
+    CustomerReview,
+    WhyUsSection,
+    WhyDifferentSection,
+    FeaturedNews,
     AppGetInTouch,
     AppFooter,
   },

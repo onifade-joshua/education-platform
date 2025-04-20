@@ -7,10 +7,10 @@
       >
         <!-- Logo (Top Left) -->
         <div class="logo-container">
-          <img :src="logo" alt="Logo" class="logo" />
+          <img :src="logo" alt="Logo" class="logo"/>
         </div>
 
-        <h2 class="fw-bold text-center mt-5" style="padding-top: 20px">
+        <h2 class="fw-bold text-center mt-5" style="padding-top: 20px; color: #1d1b44;">
           SIGN UP
         </h2>
         <p class="text-muted text-center">
@@ -19,7 +19,8 @@
 
         <form @submit.prevent="handleSignup" class="w-75 mx-auto">
           <div class="mb-3 input-group">
-            <span class="input-group-text"><i class="bi bi-person"></i></span>
+            <span class="input-group-text"><i class="bi bi-person"></i>
+            </span>
             <input
               type="text"
               v-model="username"
@@ -30,7 +31,8 @@
           </div>
 
           <div class="mb-3 input-group">
-            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+            <span class="input-group-text"><i class="bi bi-lock"></i>
+            </span>
             <input
               type="password"
               v-model="password"
@@ -41,7 +43,8 @@
           </div>
 
           <div class="mb-3 input-group">
-            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+            <span class="input-group-text"><i class="bi bi-lock"></i>
+            </span>
             <input
               type="password"
               v-model="confirmPassword"
@@ -51,18 +54,18 @@
             />
           </div>
 
-          <button type="submit" class="btn btn-dark w-100">Signup Now</button>
+          <button type="submit" class="btn btn-dark w-100 mt-3">Signup Now</button>
         </form>
 
         <div class="social-icons mt-4 d-flex justify-content-center">
-          <button class="btn btn-outline-dark mx-2">
-            <i class="bi bi-google"></i>
+          <button class="btn btn-outline mx-2">
+            <i class="bi bi-google text-danger"></i>
           </button>
-          <button class="btn btn-outline-dark mx-2">
-            <i class="bi bi-facebook"></i>
+          <button class="btn btn-outline mx-2">
+            <i class="bi bi-facebook text-primary"></i>
           </button>
-          <button class="btn btn-outline-dark mx-2">
-            <i class="bi bi-apple"></i>
+          <button class="btn btn-outline mx-2">
+            <i class="bi bi-apple text-dark"></i>
           </button>
         </div>
 
@@ -81,7 +84,9 @@
 </template>
 
 <script>
-import Logo from "@/assets/cbn.jpg"; // Ensure the path is correct
+import Logo from "@/assets/logo-img.png"; 
+
+
 
 export default {
   data() {
@@ -108,6 +113,24 @@ export default {
 </script>
 
 <style scoped>
+/*Btn mx-2 */
+.mx-2 {
+  background-color: #fff;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.mx-2:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+  background-color: #fff;
+  /* color: #fff; */
+}
+
 /* Background Gradient */
 .signup-page {
   background: linear-gradient(to right, #ffffff, #1c1c2e);
@@ -118,11 +141,11 @@ export default {
   position: absolute;
   top: 20px;
   left: 40px;
-  margin-bottom: 30px; /* Adds space between the logo and the form */
+  margin-bottom: 30px; 
 }
 
 .logo {
-  width: 30px; /* Reduced size */
+  width: 120px; 
 }
 
 /* Input Fields */
@@ -146,18 +169,21 @@ export default {
 }
 
 .info-image {
-  max-width: 80%; /* Keeps the image from being too large */
-  max-height: 80%; /* Ensures the image fits within the container */
+  max-width: 80%; 
+  max-height: 80%;
   object-fit: contain; /* Maintains aspect ratio without cropping */
 }
 
 /* Buttons */
 button {
   transition: all 0.3s ease-in-out;
+  background-color: #1d1b44;
+  padding: 0.5rem;
+  /* height: "50px"; */
 }
 
 button:hover {
-  background: #5a0084;
+  background: #141136;
   color: white;
 }
 </style>

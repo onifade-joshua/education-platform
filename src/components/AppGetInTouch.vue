@@ -2,7 +2,7 @@
   <div class="container py-5">
     <div class="row align-items-center">
       <!-- Left Section (Text) -->
-      <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
+      <div class="col-12 col-sm-6 text-center text-md-start mb-4 mb-md-0">
         <p class="text-uppercase text-secondary fw-semibold">GET IN TOUCH</p>
         <h1 class="fw-bold display-5">
           Let's <span class="text-primary">Make</span> Your Brand <span class="text-dark">Brilliant!</span>

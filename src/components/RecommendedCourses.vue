@@ -1,4 +1,5 @@
 <template>
+  <div class="wrapper" style="  background: #f8f9ff; padding: 1rem;">
   <section class="container">
     <div class="content">
       
@@ -31,6 +32,7 @@
 
     </div>
   </section>
+</div>
 </template>
 
 <script>
@@ -63,9 +65,10 @@ export default {
 .container {
   background-color: #090014;
   color: white;
-  padding: 80px 20px;
+  padding: 80px 40px;
   display: flex;
   justify-content: center;
+  border-radius: 50px;
 }
 
 .content {
@@ -114,7 +117,7 @@ export default {
   font-weight: bold;
   position: absolute;
   left: 0;
-  top: 3px;
+  /* top: 3px; */
 }
 
 .view-more {

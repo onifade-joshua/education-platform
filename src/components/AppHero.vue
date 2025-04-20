@@ -10,7 +10,7 @@
             Empower your learning journey with a cutting-edge Learning Management System that is
             intuitive, scalable, and fully equipped to meet the needs of learners, educators, and organizations.
           </p>
-          <a href="#" class="btn btn-dark rounded-pill px-4 py-3 mt-3">Get Started Free Trial</a>
+          <a href="#" class="btn rounded-pill px-4 py-3 mt-3" style="background-color: #1d1b44; color:#fff;">Get Started Free Trial</a>
         </div>
 
         <!-- Right Image Content -->
@@ -25,7 +25,7 @@
           <!-- Floating Analytics with Chart -->
           <div class="floating-analytics position-absolute">
             <div class="analytics-box shadow-sm">
-              <span style="font-size: 13px;">Increase Audience</span>
+              <span style="font-size: 12px;">Increase Audience</span>
               <canvas ref="audienceChart"></canvas>
               <h5>125K Followers</h5>
             </div>
@@ -45,7 +45,7 @@
 
 <script>
 import { Chart, registerables } from "chart.js";
-import Logo from "../assets/cbn.jpg";
+import Logo from "../assets/logo-img.png";
 import TestimonialSection from "./TestimonialSection.vue";
 
 Chart.register(...registerables);
@@ -93,7 +93,7 @@ export default {
 <style scoped>
 /* Hero Section */
 .hero-section {
-  background: #f8f9fa;
+  background: #fff;
   padding: 2rem 0;
 }
 
@@ -108,8 +108,8 @@ export default {
 
 .hero-img {
   max-width: 100%;
-  width: 300px; /* Adjust size on smaller screens */
-  height: auto;
+  width: 250px; /* Adjust size on smaller screens */
+  height: 250px;
   object-fit: cover;
   border: 8px solid #fff;
 }
@@ -126,7 +126,7 @@ export default {
 
 .floating-analytics {
   bottom: 10px;
-  right: -10px;
+  right: -20px;
 }
 
 /* Adjust chart box for small screens */
@@ -139,8 +139,8 @@ export default {
 }
 
 .analytics-box canvas {
-  width: 50px !important;
-  height: 50px !important;
+  width: 40px !important;
+  height: 40px !important;
   margin: auto;
 }
 

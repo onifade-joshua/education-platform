@@ -1,0 +1,33 @@
+/* App.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    overflow-x: hidden;
+  }
+  
+  /* img {
+    max-width: 100%;
+    height: auto;
+  } */
+  
+  h1, h2, h3, h4, h5, h6, p {
+    word-wrap: break-word;
+    margin-bottom: 1rem;
+  }
+  
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  

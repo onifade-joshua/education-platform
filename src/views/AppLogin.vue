@@ -10,7 +10,7 @@
           <img :src="logo" alt="Logo" class="logo" />
         </div>
 
-        <h2 class="fw-bold text-center mt-5">LOGIN</h2>
+        <h2 class="fw-bold text-center mt-5" style="color: #1d1b44;">LOGIN</h2>
         <p class="text-muted text-center">
           Welcome back! Please login to continue.
         </p>
@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import Logo from "@/assets/cbn.jpg";
+import Logo from "@/assets/logo-img.png";
 
 export default {
   data() {
@@ -108,7 +108,7 @@ export default {
 }
 
 .logo {
-  width: 30px;
+  width: 120px;
 }
 
 /* Input Fields */
@@ -146,10 +146,12 @@ export default {
 /* Buttons */
 button {
   transition: all 0.3s ease-in-out;
+  background-color: #1d1b44;
+  padding: 0.5rem;
 }
 
 button:hover {
-  background: #333;
+  background: #141136;
   color: white;
 }
 </style>

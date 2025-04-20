@@ -48,7 +48,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
-  background: #f8f9fa;
+  /* background: #f8f9fa; */
   text-align: center;
 }
 

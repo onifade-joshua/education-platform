@@ -5,9 +5,12 @@
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
         <!-- Logo -->
         <div class="d-flex align-items-center justify-content-center mb-3 mb-md-0">
-          <span class="logo-dot bg-dark me-1"></span>
+          <a class="navbar-brand" href="#">
+          <img :src="logo" alt="Logo" height="40" class="logo" />
+      </a>
+          <!-- <span class="logo-dot bg-dark me-1"></span>
           <span class="logo-dot bg-primary me-1"></span>
-          <span class="logo-dot bg-secondary"></span>
+          <span class="logo-dot bg-secondary"></span> -->
         </div>
         
         <!-- Navigation Links -->
@@ -42,8 +45,14 @@
 </template>
 
 <script>
+import Logo from "@/assets/logo-img.png";
 export default {
   name: "AppFooter",
+  data() {
+    return {
+      logo: Logo
+    };
+  }
 };
 </script>
 

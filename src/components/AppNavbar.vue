@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Brand Logo -->
       <a class="navbar-brand" href="#"> 
-        <img :src="logo" alt="Logo" height="40" />
+        <img :src="logo" alt="Logo" height="40" class="logo" />
       </a>
 
       <!-- Navbar Toggler Button -->
@@ -28,14 +28,14 @@
         </ul>
 
         <!-- Join Button - Adjusted for Mobile -->
-        <a href="#" class="btn btn-dark ms-lg-3 d-block d-lg-inline-block mt-3 mt-lg-0">Join</a>
+        <a href="#" class="btn ms-lg-3 d-block d-lg-inline-block mt-3 mt-lg-0" style="background-color: #1d1b44; color: #fff;">Join</a>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
-import Logo from "../assets/cbn.jpg";
+import Logo from "../assets/logo-img.png";
 export default {
   name: "AppNavbar",
   data() {
