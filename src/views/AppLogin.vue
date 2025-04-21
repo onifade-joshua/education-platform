@@ -40,7 +40,7 @@
 
           <!-- Forgot Password Link -->
           <div class="text-end">
-            <router-link to="/forgot-password" class="forgot-password-link"
+            <router-link to="/appdashboard" class="forgot-password-link"
               >Forgot Password?</router-link
             >
           </div>
@@ -79,20 +79,31 @@ export default {
       username: "",
       password: "",
       logo: Logo,
+      // Dummy users array
+      dummyUsers: [
+        { username: "admin", password: "password" },
+        { username: "testuser", password: "123456" },
+        { username: "student", password: "learning" }
+      ]
     };
   },
   methods: {
     handleLogin() {
-      if (this.username === "admin" && this.password === "password") {
+      const validUser = this.dummyUsers.find(
+        user => user.username === this.username && user.password === this.password
+      );
+
+      if (validUser) {
         localStorage.setItem("isAuthenticated", "true");
         this.$router.push("/dashboard");
       } else {
         alert("Invalid Credentials");
       }
-    },
-  },
+    }
+  }
 };
 </script>
+
 
 <style scoped>
 /* Background Gradient */
