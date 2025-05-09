@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Logo from "../assets/logo-img.png";
+import Logo from "../assets/background.jpg";
 
 export default {
   data() {
@@ -66,7 +66,6 @@ export default {
   margin-bottom: 40px;
 }
 
-/* Responsive Course Grid */
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -74,7 +73,6 @@ export default {
   justify-content: center;
 }
 
-/* Course Card */
 .course-card {
   background: linear-gradient(135deg, #f0f5ff, #ebf0ff);
   padding: 20px;
@@ -107,7 +105,6 @@ export default {
   color: #64678a;
 }
 
-/* View All Courses Button */
 .view-all-btn {
   margin-top: 80px;
   padding: 20px 30px;
@@ -125,7 +122,6 @@ export default {
   background: #141136;
 }
 
-/* Mobile Responsive Styling */
 @media (max-width: 768px) {
   .title {
     font-size: 24px;

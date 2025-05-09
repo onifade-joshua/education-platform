@@ -19,8 +19,7 @@
 
         <form @submit.prevent="handleSignup" class="w-75 mx-auto">
           <div class="mb-3 input-group">
-            <span class="input-group-text"><i class="bi bi-person"></i>
-            </span>
+            <span class="input-group-text"><i class="bi bi-person"></i></span>
             <input
               type="text"
               v-model="username"
@@ -31,8 +30,18 @@
           </div>
 
           <div class="mb-3 input-group">
-            <span class="input-group-text"><i class="bi bi-lock"></i>
-            </span>
+            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+            <input
+              type="email"
+              v-model="email"
+              class="form-control"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="bi bi-lock"></i></span>
             <input
               type="password"
               v-model="password"
@@ -43,8 +52,7 @@
           </div>
 
           <div class="mb-3 input-group">
-            <span class="input-group-text"><i class="bi bi-lock"></i>
-            </span>
+            <span class="input-group-text"><i class="bi bi-lock"></i></span>
             <input
               type="password"
               v-model="confirmPassword"
@@ -54,7 +62,18 @@
             />
           </div>
 
-          <button type="submit" class="btn btn-dark w-100 mt-3">Signup Now</button>
+          <div v-if="error" class="alert alert-danger" role="alert">
+            {{ error }}
+          </div>
+
+          <button 
+            type="submit" 
+            class="btn btn-dark w-100 mt-3"
+            :disabled="isLoading"
+          >
+            <span v-if="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            {{ isLoading ? 'Signing Up...' : 'Signup Now' }}
+          </button>
         </form>
 
         <div class="social-icons mt-4 d-flex justify-content-center">
@@ -77,7 +96,7 @@
 
       <!-- Right Section (Image & Text) -->
       <div class="col-md-6 d-flex image-container">
-        <img :src="logo" alt="Illustration" class="info-image" />
+        <img :src="logo" alt="Illustration" class="info-image img-fluid" />
       </div>
     </div>
   </div>
@@ -85,35 +104,68 @@
 
 <script>
 import Logo from "@/assets/logo-img.png"; 
-
-
+import signupService from "@/services/signupService";
 
 export default {
   data() {
     return {
       username: "",
+      email: "",
       password: "",
       confirmPassword: "",
       logo: Logo,
+      isLoading: false,
+      error: null
     };
   },
   methods: {
-    handleSignup() {
+    async handleSignup() {
+      this.error = null;
+      
+      // Validate passwords match
       if (this.password !== this.confirmPassword) {
-        alert("Passwords do not match!");
+        this.error = "Passwords do not match!";
         return;
       }
-
-      // Simulating signup success (Replace with API call)
-      localStorage.setItem("isAuthenticated", "true");
-      this.$router.push("/dashboard");
+      
+      // Validate password strength (example)
+      if (this.password.length < 8) {
+        this.error = "Password must be at least 8 characters long";
+        return;
+      }
+      
+      // Start loading
+      this.isLoading = true;
+      
+      try {
+        // Register the user
+        const userData = {
+          username: this.username,
+          email: this.email,
+          password: this.password
+        };
+        
+        await signupService.register(userData);
+        
+        // Redirect to dashboard or home after signup
+        this.$router.push("/home");
+      } catch (err) {
+        // Handle specific API error messages
+        if (err.response && err.response.data) {
+          this.error = err.response.data.message || "Registration failed. Please try again.";
+        } else {
+          this.error = "Unable to connect to the server. Please try again later.";
+        }
+        console.error("Signup error:", err);
+      } finally {
+        this.isLoading = false;
+      }
     },
   },
 };
 </script>
 
 <style scoped>
-/*Btn mx-2 */
 .mx-2 {
   background-color: #fff;
   color: white;
@@ -131,37 +183,34 @@ export default {
   /* color: #fff; */
 }
 
-/* Background Gradient */
 .signup-page {
   background: linear-gradient(to right, #ffffff, #1c1c2e);
 }
 
-/* Logo Positioning */
 .logo-container {
   position: absolute;
   top: 20px;
   left: 40px;
   margin-bottom: 30px; 
+  height: 100vh;
 }
 
 .logo {
-  width: 120px; 
+  width: 40px; 
 }
 
-/* Input Fields */
 .input-group-text {
   background: #f0f0f0;
 }
 
-/* Right Section Styling */
 .info-card {
   padding: 40px;
   max-width: 450px;
 }
 
-/* Centered Image with Grey Background */
 .image-container {
-  background: #f0f0f0; 
+  background: #fff; 
+  /* background: #f1f1f1; */
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -171,10 +220,9 @@ export default {
 .info-image {
   max-width: 80%; 
   max-height: 80%;
-  object-fit: contain; /* Maintains aspect ratio without cropping */
+  object-fit: contain; 
 }
 
-/* Buttons */
 button {
   transition: all 0.3s ease-in-out;
   background-color: #1d1b44;
@@ -185,5 +233,10 @@ button {
 button:hover {
   background: #141136;
   color: white;
+}
+
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
 }
 </style>

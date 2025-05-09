@@ -15,15 +15,20 @@
           Welcome back! Please login to continue.
         </p>
 
+        <div v-if="errorMessage" class="alert alert-danger text-center w-75 mx-auto mb-3">
+          {{ errorMessage }}
+        </div>
+
         <form @submit.prevent="handleLogin" class="w-75 mx-auto">
           <div class="mb-3 input-group">
             <span class="input-group-text"><i class="bi bi-person"></i></span>
             <input
               type="text"
-              v-model="username"
+              v-model="email"
               class="form-control"
-              placeholder="Username"
+              placeholder="Email"
               required
+              :disabled="loading"
             />
           </div>
 
@@ -35,24 +40,22 @@
               class="form-control"
               placeholder="Password"
               required
+              :disabled="loading"
             />
           </div>
 
           <!-- Forgot Password Link -->
           <div class="text-end">
-            <router-link to="/appdashboard" class="forgot-password-link"
+            <router-link to="/forgot-password" class="forgot-password-link"
               >Forgot Password?</router-link
             >
           </div>
 
-          <button type="submit" class="btn btn-dark w-100">Login Now</button>
+          <button type="submit" class="btn btn-dark w-100" :disabled="loading">
+            <span v-if="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            {{ loading ? 'Logging in...' : 'Login Now' }}
+          </button>
         </form>
-
-        <!-- <div class="social-icons mt-4 d-flex justify-content-center">
-            <button class="btn btn-outline-dark mx-2"><i class="bi bi-google"></i></button>
-            <button class="btn btn-outline-dark mx-2"><i class="bi bi-facebook"></i></button>
-            <button class="btn btn-outline-dark mx-2"><i class="bi bi-apple"></i></button>
-          </div> -->
 
         <p class="mt-4 text-center">
           Don't have an account?
@@ -72,32 +75,43 @@
 
 <script>
 import Logo from "@/assets/logo-img.png";
+import authService from "@/services/authService";
 
 export default {
   data() {
     return {
-      username: "",
+      email: "",
       password: "",
       logo: Logo,
-      // Dummy users array
-      dummyUsers: [
-        { username: "admin", password: "password" },
-        { username: "testuser", password: "123456" },
-        { username: "student", password: "learning" }
-      ]
+      loading: false,
+      errorMessage: ""
     };
   },
+  created() {
+    if (authService.isAuthenticated()) {
+      this.$router.push("/home");
+    }
+  },
   methods: {
-    handleLogin() {
-      const validUser = this.dummyUsers.find(
-        user => user.username === this.username && user.password === this.password
-      );
+    async handleLogin() {
+      this.loading = true;
+      this.errorMessage = "";
 
-      if (validUser) {
-        localStorage.setItem("isAuthenticated", "true");
-        this.$router.push("/dashboard");
-      } else {
-        alert("Invalid Credentials");
+      try {
+        await authService.login(this.email, this.password);
+        this.$router.push("/home");
+      } catch (error) {
+        if (error.response) {
+          if (error.response.status === 401) {
+            this.errorMessage = "Invalid email or password.";
+          } else {
+            this.errorMessage = error.response.data?.message || "Login failed.";
+          }
+        } else {
+          this.errorMessage = "Network error. Please try again.";
+        }
+      } finally {
+        this.loading = false;
       }
     }
   }
@@ -106,30 +120,27 @@ export default {
 
 
 <style scoped>
-/* Background Gradient */
 .login-page {
   background: linear-gradient(to right, #ffffff, #1c1c2e);
 }
 
-/* Logo Positioning */
 .logo-container {
   position: absolute;
   top: 20px;
   left: 40px;
+  /* background: linear-gradient(to right, #ffffff, #1c1c2e); */
 }
 
 .logo {
-  width: 120px;
+  width: 40px;
 }
 
-/* Input Fields */
 .input-group-text {
   background: #f0f0f0;
 }
 
-/* Right Section Styling */
 .image-container {
-  background: #f0f0f0;
+  background: #fff;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -154,7 +165,6 @@ export default {
   text-decoration: underline;
 }
 
-/* Buttons */
 button {
   transition: all 0.3s ease-in-out;
   background-color: #1d1b44;

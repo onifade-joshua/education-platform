@@ -1,5 +1,5 @@
 <template>
-    <section class="py-5 bg-light text-center">
+    <section class="py-5 text-center">
       <div class="container">
         <h2 class="fw-bold mb-5">
           What our <span class="text-primary">happy clients</span> say

@@ -45,7 +45,7 @@
 
 <script>
 import { Chart, registerables } from "chart.js";
-import Logo from "../assets/logo-img.png";
+import Logo from "../assets/background.jpg";
 import TestimonialSection from "./TestimonialSection.vue";
 
 Chart.register(...registerables);
@@ -101,20 +101,18 @@ export default {
   gap: 2rem;
 }
 
-/* Ensure text scales properly */
 .text-content {
   max-width: 600px;
 }
 
 .hero-img {
   max-width: 100%;
-  width: 250px; /* Adjust size on smaller screens */
+  width: 250px; 
   height: 250px;
   object-fit: cover;
   border: 8px solid #fff;
 }
 
-/* Floating Elements */
 .floating-label {
   top: 10%;
   left: -30px;
@@ -129,7 +127,6 @@ export default {
   right: -20px;
 }
 
-/* Adjust chart box for small screens */
 .analytics-box {
   background: white;
   padding: 10px;
@@ -151,7 +148,6 @@ export default {
   font-size: 12px;
 }
 
-/* Testimonial Section */
 .testimonial-wrapper {
   display: flex;
   flex-direction: column;

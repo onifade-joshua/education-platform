@@ -42,7 +42,6 @@ export default {
 </script>
 
 <style scoped>
-/* Base Styles */
 .testimonial-section {
   display: flex;
   justify-content: center;
@@ -56,7 +55,6 @@ export default {
   max-width: 500px;
 }
 
-/* Avatar Styling */
 .avatar-group {
   display: flex;
   justify-content: center;
@@ -73,7 +71,6 @@ export default {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Testimonial Text */
 .testimonial-text {
   font-size: 18px;
   color: #333;
@@ -84,7 +81,6 @@ export default {
   font-weight: bold;
 }
 
-/* Responsive Design */
 @media (max-width: 600px) {
   .testimonial-section {
     padding: 30px 15px;

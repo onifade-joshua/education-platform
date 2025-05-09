@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- <ScreenLoader /> -->
     <template v-if="isAuthRoute">
       <router-view />
     </template>
@@ -15,10 +16,12 @@ import { useRoute } from "vue-router";
 import { computed } from "vue";
 
 import AppNavbar from "./components/AppNavbar.vue";
+// import ScreenLoader from "./components/custom/ScreenLoader.vue";
 
 export default {
   components: {
-    AppNavbar
+    AppNavbar,
+    // ScreenLoader
   },
   setup() {
     const route = useRoute();

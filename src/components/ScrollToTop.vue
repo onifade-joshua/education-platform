@@ -51,7 +51,6 @@
     transform: scale(1.05);
   }
   
-  /* On smaller devices, slightly reduce size and offset */
   @media (max-width: 576px) {
     .scroll-to-top {
       width: 42px;

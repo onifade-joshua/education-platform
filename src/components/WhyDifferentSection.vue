@@ -8,7 +8,7 @@
         </h2>
   
         <!-- Card Row -->
-        <div class="row justify-content-center bg-light rounded-4 p-4 shadow-sm gx-3 gy-4">
+        <div class="row justify-content-center rounded-4 p-5 shadow-sm gx-3 gy-2">
           <!-- Card 1 -->
           <div class="col-12 col-sm-6 col-lg-4">
             <div class="bg-dark text-white p-4 rounded-4 h-100">
@@ -67,7 +67,7 @@
   
   <style scoped>
   .text-primary {
-    color: #5e61e7 !important; /* Matches blue used in your screenshot */
+    color: #5e61e7 !important; 
   }
   </style>
   

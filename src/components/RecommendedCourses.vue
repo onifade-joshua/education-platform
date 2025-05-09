@@ -61,7 +61,6 @@ export default {
 </script>
 
 <style scoped>
-/* Global Container */
 .container {
   background-color: #090014;
   color: white;
@@ -69,6 +68,7 @@ export default {
   display: flex;
   justify-content: center;
   border-radius: 50px;
+  margin-bottom: 2.5rem;
 }
 
 .content {
@@ -129,7 +129,6 @@ export default {
   text-decoration: none;
 }
 
-/* About Section */
 .about-section {
   width: 50%;
 }
@@ -156,7 +155,6 @@ export default {
   line-height: 1.8;
 }
 
-/* Tags Section */
 .tags {
   margin-top: 30px;
   display: flex;
@@ -175,7 +173,6 @@ export default {
   box-shadow: 0 2px 8px rgba(108, 56, 255, 0.4);
 }
 
-/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
   .content {
     flex-direction: column;

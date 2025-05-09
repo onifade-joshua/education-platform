@@ -6,7 +6,7 @@
         <img :src="logo" alt="Logo" height="40" class="logo" />
       </a> -->
       <router-link class="navbar-brand" to="/home">
-        <img :src="logo" alt="Logo" height="40" class="logo" />
+        <img :src="logo" alt="Logo" height="30" width="40" class="logo" />
       </router-link>
 
       <!-- Navbar Toggler Button -->
@@ -74,12 +74,10 @@ export default {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Space between nav items */
 .navbar-nav {
   gap: 15px;
 }
 
-/* Ensures full width on mobile */
 @media (max-width: 991px) {
   .navbar-collapse {
     text-align: center;
@@ -94,7 +92,7 @@ export default {
   }
 
   .btn {
-    width: 100%; /* Full width for mobile */
+    width: 100%; 
   }
 }
 </style>
